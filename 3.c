@@ -13,16 +13,20 @@ int len(int n)
 }
 int pd(int n,int sum)
 {
-    int N,i,pd,s=0,pw;
+    int N,i,pd=0,s,pw,x=0;
     i=len(n);
     N=n;
     pw=pow(10,i);
     do
     {
         s=(N%10);
+        pd+=s*pw;
         N/=10;
-        s++;
-    }while(s!=i);
+        pw/=10;
+        x++;
+    }while(x!=i);
+    if(pd==n)
+        sum++;
 }
 int main()
 {
