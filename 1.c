@@ -1,11 +1,4 @@
 #include<stdio.h>
-int ch(int i)
-{
-    int sum=0;
-    if(i!=3)
-        sum=1;
-    return sum;
-}
 int ct(int n)
 {
     int i=0,N,k=2,sum=0;
@@ -19,12 +12,13 @@ int ct(int n)
         }
         else
         {
-
-                i=0;
+            i=0;
             k++;
         }
     }while(N>1);
-    ch(i);
+    if(i!=3)
+        sum=1;
+    return sum;
 }
 int main()
 {
@@ -34,7 +28,7 @@ int main()
         {
           for(i=1;i<=n;i++)
             sum+=ct(i);
-        printf("%d",sum);
+          printf("%d",sum);
         }
         else
             printf("Not Cube Free");
