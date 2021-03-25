@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int n,i=1,j=0;
+    int n,i=2,j=0;
     scanf("%d",&n);
     do
     {
@@ -9,13 +9,14 @@ int main()
             j++;
         else
         {
-            j=0;
+            j=1;
             i++;
         }
-
-    }while(i!=n);
+        n/=i;
+        printf("%d",j);
+    }while(n>1);
     if(j==3)
-        printf("y");
-    else
         printf("Not Cube Free");
+    else
+        printf("Y");
 }
