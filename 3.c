@@ -8,7 +8,7 @@ int len(int n)
     {
         N/=10;
         i++;
-        printf("%d",i);
+        //printf("%d",i);
     }while(N>0);
     return i;
 }
@@ -21,11 +21,13 @@ int pd(int n,int sum)
     do
     {
         s=(N%10);
-        pd+=s*pw;
+        pd+=(s*pw);
         N/=10;
         pw/=10;
         x++;
+       printf("%d ",s);
     }while(x!=i);
+
     if(pd==n)
         sum++;
 }
