@@ -1,4 +1,11 @@
 #include<stdio.h>
+int ch(int i)
+{
+    int sum=0;
+    if(i<3)
+        sum=1;
+    return sum;
+}
 int ct(int n)
 {
     int i=0,N,k=2,sum=0;
@@ -17,9 +24,7 @@ int ct(int n)
             k++;
         }
     }while(N>1);
-    if(i<3)
-        sum=1;
-    return sum;
+    ch(i);
 }
 int main()
 {
@@ -27,7 +32,7 @@ int main()
     scanf("%d",&n);
         if(ct(n)==1)
         {
-          for(i=1;i<n;i++)
+          for(i=1;i<=n;i++)
         {
             sum+=ct(i);
         }
