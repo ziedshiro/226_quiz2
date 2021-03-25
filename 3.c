@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<math.h>
 int len(int n)
 {
     int N,i=0;
@@ -12,12 +11,21 @@ int len(int n)
     }while(N>0);
     return i;
 }
+int pow(int i)
+{
+    int n,x;
+    n=10,x;
+    for(x=0;x<i-1;x++)
+        n*=10;
+        return n;
+}
 int pd(int n,int sum)
 {
     int N,i,pd=0,s,pw,x=0;
     i=len(n);
     N=n;
-    pw=pow(10,i);
+    pw=pow(i);
+    printf("%d ",pw);
     do
     {
         s=(N%10);
@@ -25,7 +33,7 @@ int pd(int n,int sum)
         N/=10;
         pw/=10;
         x++;
-       printf("%d ",s);
+
     }while(x!=i);
 
     if(pd==n)
