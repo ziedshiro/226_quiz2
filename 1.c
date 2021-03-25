@@ -2,7 +2,7 @@
 int ch(int i)
 {
     int sum=0;
-    if(i<3)
+    if(i!=3)
         sum=1;
     return sum;
 }
@@ -19,7 +19,7 @@ int ct(int n)
         }
         else
         {
-            if(i<3)
+
                 i=0;
             k++;
         }
@@ -28,17 +28,14 @@ int ct(int n)
 }
 int main()
 {
-    int n,i,sum=1;
+    int n,i,sum=0;
     scanf("%d",&n);
         if(ct(n)==1)
         {
           for(i=1;i<=n;i++)
-        {
             sum+=ct(i);
-        }
         printf("%d",sum);
         }
-
         else
             printf("Not Cube Free");
 }
