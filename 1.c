@@ -1,57 +1,44 @@
 #include<stdio.h>
-int ans(int sum,int N)
+int ct(int n)
 {
-    int i,k,n,j=0;
-    for(i=2;i<=N;i++)
+    int i=0,N,k=2,sum=0;
+    N=n;
+    do
     {
-        k=2;
-        n=i;
-        j=0;
-        do
+        if(N%k==0)
         {
-           if(n%k==0)
-        {
-            n/=k;
-            j++;
+            i++;
+            N/=k;
         }
         else
         {
+            if(i<3)
+                i=0;
             k++;
-            if(j<3)
-                j=0;
         }
-        }while(n>1);
-        if(j<3)
-            sum++;
-    }
+    }while(N>1);
+    if(i<3)
+        sum=1;
     return sum;
 }
 int main()
 {
-    int n,i=2,sum=1,j=0,N;
+    int n,i,sum=8;
     scanf("%d",&n);
-    N=n;
-    do
-    {
-        if(n%i==0)
-        {
-            n/=i;
-            j++;
-        }
-        else
-        {
-            i++;
-            if(j<3)
-                j=0;
-        }
-    }while(n>1);
-    if(j>=3)
-         printf("Not Cube Free");
+    if(n<8)
+        printf("%d",n);
     else
     {
-        if(N==1)
-            printf("1");
+        if(ct(n)==1)
+        {
+          for(i=8;i<n;i++)
+        {
+            sum+=ct(i);
+        }
+        printf("%d",sum);
+        }
+
         else
-        printf("%d",ans(sum,N));;
+            printf("Not Cube Free");
     }
 }
