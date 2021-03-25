@@ -14,7 +14,7 @@ int len(int n)
 int pow(int i)
 {
     int n,x;
-    n=10,x;
+    n=1,x;
     for(x=0;x<i-1;x++)
         n*=10;
         return n;
@@ -25,17 +25,16 @@ int pd(int n,int sum)
     i=len(n);
     N=n;
     pw=pow(i);
-    printf("%d ",pw);
+
     do
     {
         s=(N%10);
-        pd+=(s*pw);
+        pd=pd+(s*pw);
         N/=10;
         pw/=10;
         x++;
-
+        printf("%d ",pd);
     }while(x!=i);
-
     if(pd==n)
         sum++;
 }
