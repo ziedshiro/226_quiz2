@@ -7,7 +7,6 @@ int len(int n)
     {
         N/=10;
         i++;
-        //printf("%d",i);
     }while(N>0);
     return i;
 }
