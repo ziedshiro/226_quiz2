@@ -7,12 +7,13 @@ int main()
     for(i=0;i<m;i++)
         for(j=0;j<70;j++)
             s[i][j]='o';
-            for(i=0;i<m;i++)
-        {
-            for(j=0;j<70;j++)
-        printf("%c",s[i][j]);
-        printf("\n");
-        }
+    int x[n][3];
+    for(i=0;i<n;i++)
+        for(j=0;j<3;j++)
+        scanf("%d",&x[i][j]);
+    for(i=0;i<n;i++)
+        for(j=0;j<3;j++)
+            printf("%d",x[i][j]);
 
 
 }
