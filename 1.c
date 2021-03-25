@@ -23,15 +23,11 @@ int ct(int n)
 }
 int main()
 {
-    int n,i,sum=8;
+    int n,i,sum=1;
     scanf("%d",&n);
-    if(n<8)
-        printf("%d",n);
-    else
-    {
         if(ct(n)==1)
         {
-          for(i=8;i<n;i++)
+          for(i=1;i<n;i++)
         {
             sum+=ct(i);
         }
@@ -40,5 +36,4 @@ int main()
 
         else
             printf("Not Cube Free");
-    }
 }
