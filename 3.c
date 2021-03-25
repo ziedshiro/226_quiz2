@@ -6,8 +6,9 @@ int len(int n)
     N=n;
     do
     {
-        N/10;
+        N/=10;
         i++;
+        printf("%d",i);
     }while(N>0);
     return i;
 }
