@@ -33,14 +33,16 @@ int pd(int n,int sum)
         N/=10;
         pw/=10;
         x++;
-        printf("%d ",pd);
     }while(x!=i);
     if(pd==n)
-        sum++;
+        sum=1;
+    else
+        sum=0;
+    return sum;
 }
 int main()
 {
-    int n,i,sum=9;
+    int n,i,sum=9,x;
     scanf("%d",&n);
     if(n<10)
         printf("%d",n);
@@ -48,7 +50,7 @@ int main()
     {
         for(i=10;i<=n;i++)
         {
-            pd(i,sum);
+            sum+=pd(i,x);
         }
         printf("%d",sum);
     }
